@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="auth-screen" class="container">
+        <div class="card auth-card">
+            <h1>Smart Guide<span class="highlight"></span></h1>
+            <p>Discover the world around you.</p>
+            <input type="text" id="username" placeholder="Username" >
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Enter / Sign Up</button>
+        </div>
+    </div>
+
+    <div id="app-screen" class="hidden">
+        <nav>
+            <div class="logo">Smart Guide</div>
+            <div class="user-info">
+                <span id="display-name">User</span>
+                <button onclick="logout()" class="btn-small">Logout</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+
+            <h2>Explore Nearby Gems</h2>
+    
+    <div id="weather-box" class="weather-container hidden">
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <div>
+            <span id="weather-temp">--°C</span>
+            <p id="weather-desc">Loading...</p>
+        </div>
+    </div>
+    <div class="search-bar">
+
+            <!-- <h2>Explore Nearby Gems</h2> -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for a place...">
+                <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+            </div>
+            <button class="btn-primary" onclick="detectLocation()">
+                <i class="fas fa-location-arrow"></i> Find Spots Near Me
+            </button>
+        </header>
+
+        <section class="section">
+            <h3>📈 Trending & Most Visited</h3>
+            <div id="top-spots" class="grid-container">
+                </div>
+        </section>
+
+        <section class="section">
+            <h3>📍 Results</h3>
+            <div id="results-area" class="grid-container">
+                <p class="placeholder-text">Click "Find Spots Near Me" or Search to see results.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="review-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-place-name">Place Name</h3>
+            <textarea id="review-text" placeholder="Write your experience..."></textarea>
+            <select id="review-rating">
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Good</option>
+                <option value="3">⭐⭐⭐ Average</option>
+                <option value="2">⭐⭐ Poor</option>
+                <option value="1">⭐ Terrible</option>
+            </select>
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/12/19/18/20251219180403-AFGUQFRU.js" defer></script>
+
+
+</body>
+</html>
